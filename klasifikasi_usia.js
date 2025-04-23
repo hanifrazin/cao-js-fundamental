@@ -20,19 +20,19 @@ const kategori_usia = (x) => {
     return keterangan
 }
 
+const klasifikasi = {
+    "Anak-anak": 0,
+    "Remaja": 0,
+    "Dewasa": 0,
+    "Lansia": 0
+}
+
 const anggota = Number(prompt('Masukkan jumlah anggota : '))
 
 let usia = []
 for(let i=0;i<anggota;i++){
     let value = Number(prompt(`Masukkan usia orang ke-${i+1} : `))
     usia.push(value)
-}
-
-const klasifikasi = {
-    "Anak-anak": 0,
-    "Remaja": 0,
-    "Dewasa": 0,
-    "Lansia": 0
 }
 
 usia.forEach((umur) => {
@@ -54,7 +54,7 @@ usia.forEach((umur) => {
     }
 })
 
-const info = `
+const result = `
 ============================================
 
 Anak-anak: ${klasifikasi['Anak-anak']} orang
@@ -63,4 +63,4 @@ Dewasa: ${klasifikasi.Dewasa} orang
 Lansia: ${klasifikasi.Lansia} orang
 `
 
-console.info(info)
+console.info(result)

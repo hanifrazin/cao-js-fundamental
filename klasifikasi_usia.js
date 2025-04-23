@@ -1,17 +1,18 @@
 // load library prompt-sync
 const prompt = require('prompt-sync')();
 
-const klasifikasi = (x) => {
+const kategori_usia = (x) => {
     let keterangan = ''
     switch (true) {
-        case x >= 0 && x <= 12:
+        case (x >= 0 && x <= 12):
             keterangan = 'Anak-anak';
             break;
-        case x >= 13 && x <= 17:
+        case (x >= 13 && x <= 17):
             keterangan = 'Remaja';
             break;
-        case x >=18 && x <= 59:
+        case (x >= 18 && x <= 59):
             keterangan = 'Dewasa';
+            break;
         default:
             keterangan = 'Lansia';
             break;
@@ -19,20 +20,47 @@ const klasifikasi = (x) => {
     return keterangan
 }
 
-const anggota = Number(prompt('Masukkan jumlah anggota (angka) : '))
+const anggota = Number(prompt('Masukkan jumlah anggota : '))
 
 let usia = []
 for(let i=0;i<anggota;i++){
-    let data = Number(prompt(`Masukkan usia orang ke-${i+1} : `))
-    usia.push(data)
+    let value = Number(prompt(`Masukkan usia orang ke-${i+1} : `))
+    usia.push(value)
 }
 
-usia.sort()
+const klasifikasi = {
+    "Anak-anak": 0,
+    "Remaja": 0,
+    "Dewasa": 0,
+    "Lansia": 0
+}
 
-for(const umur of usia){
-    const jenis = klasifikasi(umur)
-    let counter = 0
-    if(klasifikasi === 'Anak-anak'){
-        counter++
+usia.forEach((umur) => {
+    let jenis = kategori_usia(umur)
+
+    switch(jenis){
+        case "Anak-anak":
+            klasifikasi['Anak-anak']++
+            break;
+        case "Remaja":
+            klasifikasi.Remaja++
+            break;
+        case "Dewasa":
+            klasifikasi.Dewasa++
+            break;
+        default:
+            klasifikasi.Lansia++
+            break; 
     }
-}
+})
+
+const info = `
+============================================
+
+Anak-anak: ${klasifikasi['Anak-anak']} orang
+Remaja: ${klasifikasi.Remaja} orang
+Dewasa: ${klasifikasi.Dewasa} orang
+Lansia: ${klasifikasi.Lansia} orang
+`
+
+console.info(info)

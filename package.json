@@ -1,0 +1,23 @@
+{
+  "name": "cao-js-fundamental",
+  "version": "1.0.0",
+  "description": "Tugas Cypress After Office - JS Fundamental",
+  "homepage": "https://github.com/hanifrazin/cao-js-fundamental#readme",
+  "bugs": {
+    "url": "https://github.com/hanifrazin/cao-js-fundamental/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanifrazin/cao-js-fundamental.git"
+  },
+  "license": "ISC",
+  "author": "Hanif Razin Rahmatullah",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}

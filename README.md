@@ -9,8 +9,8 @@
      npm install
      ```
      > You only need to run `npm install` once to install dependencies such as `prompt-sync`
- 4. After that you can run `klasifikasi_usia.js` or `simple_kalkulator` using one of bellow command
- 
+ 4. After that you can run `klasifikasi_usia.js` or `simple_kalkulator.js` using one of bellow command
+
 	 ```
      node klasifikasi_usia.js
      ```
